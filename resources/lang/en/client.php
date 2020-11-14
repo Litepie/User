@@ -32,7 +32,7 @@ return [
      * Options for select/radio/check.
      */
     'options'     => [
-        'sex'    => ['', 'male', 'female'],
+        'sex'    => ['male', 'female'],
         'status' => ['New', 'Active', 'Suspended', 'Locked'],
     ],
 
