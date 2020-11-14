@@ -42,8 +42,8 @@ return [
         'id' => '',
         'name' => 'Please enter name',
         'team_id' => 'Team',
-        'user_id' => 'User',
-        'role' => 'Role',
+        'user_id' => 'Select User',
+        'role' => 'Select Role',
     ],
 
     /**
