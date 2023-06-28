@@ -1,10 +1,10 @@
 <?php
 
-namespace Litepie\User\Requests;
+namespace Litepie\User\Http\Requests;
 
 use Litepie\Http\Request\AbstractRequest;
 
-class UserRequest extends AbstractRequest
+class UserResourceRequest extends AbstractRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,9 +14,10 @@ class UserRequest extends AbstractRequest
     public function authorize()
     {
         $this->model = $this->route('user');
+
         if (is_null($this->model)) {
             // Determine if the user is authorized to access user module,
-            return $this->user()->can('view', app(config('user.user.model.repository')));
+            return $this->user()->can('view', app(config('user.user.model.model')));
         }
 
         if ($this->isWorkflow()) {
@@ -41,6 +42,7 @@ class UserRequest extends AbstractRequest
 
         // Determine if the user is authorized to view the module.
         return $this->can('view');
+
     }
 
     /**
@@ -69,4 +71,5 @@ class UserRequest extends AbstractRequest
 
         ];
     }
+
 }
